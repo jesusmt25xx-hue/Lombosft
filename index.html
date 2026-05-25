@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOMBSOFT | Servicio Técnico de Computadoras</title>
-    <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Encabezado / Navegación -->
     <header>
         <div class="contenedor nav">
             <div class="logo">LOMB<span>SOFT</span></div>
@@ -22,7 +20,6 @@
         </div>
     </header>
 
-    <!-- Sección de Bienvenida -->
     <section id="inicio" class="hero">
         <div class="contenedor">
             <h1>Soluciones Informáticas con <span>LOMBSOFT</span></h1>
@@ -31,7 +28,6 @@
         </div>
     </section>
 
-    <!-- Sección de Servicios Informáticos -->
     <section id="servicios" class="servicios">
         <div class="contenedor">
             <h2 class="titulo-seccion">Nuestros Servicios</h2>
@@ -59,26 +55,31 @@
         </div>
     </section>
 
-    <!-- Nueva Sección de Video -->
     <section id="video" class="seccion-video">
         <div class="contenedor">
             <h2 class="titulo-seccion">Conoce Nuestro Trabajo</h2>
-            <p style="text-align: center; color: var(--texto-gris); margin-bottom: 30px;">Nuestra ubicacion.</p>
+            <p style="text-align: center; color: var(--texto-gris); margin-bottom: 30px;">Nuestra ubicación y demostraciones en vivo de soporte técnico.</p>
             
-            <div class="contenedor-video">
-                <!-- Puedes cambiar el enlace "src" por el video de YouTube o archivo que desees -->
-                <iframe 
-                    src="Videos/videoLombsoft.mp4" 
-                    title="Video de presentación LOMBSOFT" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="cuadricula-videos" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; width: 100%;">
+                
+                <div class="contenedor-video" style="flex: 1; min-width: 280px; max-width: 500px; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <video controls style="width: 100%; display: block; object-fit: cover;">
+                        <source src="Videos/videoLombsoft.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de este video.
+                    </video>
+                </div>
+
+                <div class="contenedor-video" style="flex: 1; min-width: 280px; max-width: 500px; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                    <video controls style="width: 100%; display: block; object-fit: cover;">
+                        <source src="Videos/videoLombsoft2.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de este video.
+                    </video>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Sección de Contacto -->
     <section id="contacto" class="contacto">
         <div class="contenedor">
             <h2 class="titulo-seccion">¿Tu equipo falla? Déjalo en manos de expertos</h2>
@@ -88,7 +89,6 @@
                 <a href="https://www.facebook.com/luis.omar.martinez.500563" target="_blank" class="btn-redes btn-facebook">
                     <span>📘</span> Visitar Facebook Oficial
                 </a>
-                <!-- Botón de WhatsApp en la sección de contacto también -->
                 <a href="https://wa.me/51982703107?text=Hola%20LOMBSOFT,%20necesito%20soporte%20técnico" target="_blank" class="btn-redes btn-whatsapp">
                     <span>💬</span> Escríbenos por WhatsApp
                 </a>
@@ -96,16 +96,13 @@
         </div>
     </section>
 
-    <!-- Pie de Página -->
     <footer>
         <div class="contenedor">
             <p>&copy; 2026 LOMBSOFT | Soporte Técnico de Confianza. Creado para Luis Omar Martínez.</p>
         </div>
     </footer>
 
-    <!-- Botón Flotante de WhatsApp (Abajo a la derecha) -->
-    <!-- Recuerda cambiar el número '51999999999' por el número real de tu papá (incluyendo el código de país) -->
-    <a href="https://wa.me/5198703107?text=Hola%20LOMBSOFT,%20necesito%20ayuda%20con%20una%20computadora" class="whatsapp-flotante" target="_blank">
+    <a href="https://wa.me/51982703107?text=Hola%20LOMBSOFT,%20necesito%20ayuda%20con%20una%20computadora" class="whatsapp-flotante" target="_blank">
         💬
     </a>
 
