@@ -1,15 +1,17 @@
-/* Variables de Color Tecnológicas */
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
 :root {
-    --bg-principal: #0b0f19;
-    --bg-secundario: #161f30;
-    --azul-tecnologico: #00d2ff;
-    --azul-oscuro: #0055ff;
-    --texto-blanco: #f1f5f9;
-    --texto-gris: #94a3b8;
+    --azul-oscuro: #1e293b;
+    --azul-clarito: #3b82f6;
+    --texto-oscuro: #0f172a;
+    --texto-gris: #64748b;
+    --fondo-gris: #f8fafc;
+    --blanco: #ffffff;
     --verde-whatsapp: #25d366;
+    --azul-facebook: #1877f2;
 }
 
-/* Estilos Globales */
 * {
     margin: 0;
     padding: 0;
@@ -17,9 +19,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: var(--bg-principal);
-    color: var(--texto-blanco);
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
     line-height: 1.6;
 }
 
@@ -27,269 +33,291 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
-/* Barra de Navegación */
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--azul-oscuro);
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
 header {
-    background-color: var(--bg-secundario);
-    padding: 15px 0;
-    border-bottom: 2px solid var(--azul-oscuro);
+    background-color: var(--azul-oscuro);
+    padding: 20px 0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-nav {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--azul-tecnologico);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    color: var(--blanco);
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .logo span {
-    color: var(--texto-blanco);
+    color: var(--azul-clarito);
 }
 
 .menu a {
-    color: var(--texto-blanco);
+    color: var(--blanco);
     text-decoration: none;
     margin-left: 20px;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .menu a:hover {
-    color: var(--azul-tecnologico);
+    color: var(--azul-clarito);
 }
 
-/* Sección Hero (Principal) */
+/* ==========================================================================
+   3. SECCIÓN HERO (BIENVENIDA)
+   ========================================================================== */
 .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: var(--blanco);
     padding: 100px 0;
     text-align: center;
-    background: radial-gradient(circle at top, #1e293b 0%, var(--bg-principal) 70%);
 }
 
 .hero h1 {
-    font-size: 46px;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .hero h1 span {
-    color: var(--azul-tecnologico);
+    color: var(--azul-clarito);
 }
 
 .hero p {
-    font-size: 18px;
-    color: var(--texto-gris);
+    font-size: 1.2rem;
     max-width: 700px;
-    margin: 0 auto 35px;
+    margin: 0 auto 40px auto;
+    color: #cbd5e1;
 }
 
 .btn-accion {
-    background: linear-gradient(90deg, var(--azul-oscuro), var(--azul-tecnologico));
-    color: #fff;
-    padding: 14px 35px;
-    border-radius: 5px;
+    display: inline-block;
+    background-color: var(--azul-clarito);
+    color: var(--blanco);
+    padding: 15px 35px;
     text-decoration: none;
     font-weight: bold;
-    text-transform: uppercase;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: inline-block;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn-accion:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(0, 210, 255, 0.4);
+    background-color: #2563eb;
+    transform: translateY(-2px);
 }
 
-/* Sección Servicios */
+/* ==========================================================================
+   4. SECCIÓN SERVICIOS (TARJETAS)
+   ========================================================================== */
 .servicios {
     padding: 80px 0;
-}
-
-.titulo-seccion {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.titulo-seccion::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--azul-tecnologico);
-    margin: 10px auto 0;
+    background-color: var(--blanco);
 }
 
 .cuadricula-servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .tarjeta {
-    background-color: var(--bg-secundario);
-    padding: 35px;
+    background-color: var(--fondo-gris);
+    padding: 40px 30px;
     border-radius: 8px;
-    border: 1px solid #1e293b;
-    transition: transform 0.3s, border-color 0.3s;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta:hover {
     transform: translateY(-5px);
-    border-color: var(--azul-tecnologico);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .icono-servicio {
-    font-size: 40px;
-    margin-bottom: 15px;
-    display: block;
+    font-size: 3rem;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .tarjeta h3 {
-    color: var(--texto-blanco);
     margin-bottom: 15px;
-    font-size: 20px;
+    color: var(--azul-oscuro);
+    font-size: 1.4rem;
 }
 
 .tarjeta p {
     color: var(--texto-gris);
-    font-size: 15px;
+    font-size: 0.95rem;
 }
 
-/* Sección del Video */
+/* ==========================================================================
+   5. SECCIÓN DE VIDEOS (DISEÑO RESPONSIVO)
+   ========================================================================== */
 .seccion-video {
     padding: 80px 0;
-    background-color: var(--bg-principal);
+    background-color: var(--fondo-gris);
+}
+
+.cuadricula-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .contenedor-video {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-bottom: 45%; /* Relación de aspecto 16:9 */
-    height: 0;
-    border-radius: 10px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    background: #000000;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--bg-secundario);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
 }
 
-.contenedor-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+.contenedor-video:hover {
+    transform: translateY(-5px);
+}
+
+.contenedor-video video {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
-/* Sección de Contacto y Redes */
+/* ==========================================================================
+   6. SECCIÓN CONTACTO Y BOTONES
+   ========================================================================== */
 .contacto {
-    background-color: var(--bg-secundario);
     padding: 80px 0;
     text-align: center;
-    border-top: 2px solid var(--azul-oscuro);
+    background-color: var(--blanco);
 }
 
 .contacto p {
-    font-size: 18px;
-    margin-bottom: 30px;
     color: var(--texto-gris);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
 }
 
 .botones-contacto {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .btn-redes {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
+    padding: 15px 30px;
+    color: var(--blanco);
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-facebook {
-    background-color: #1877f2;
-}
-
-.btn-facebook:hover {
-    background-color: #145dbf;
-    transform: translateY(-2px);
+    background-color: var(--azul-facebook);
 }
 
 .btn-whatsapp {
     background-color: var(--verde-whatsapp);
 }
 
-.btn-whatsapp:hover {
-    background-color: #1ebe5d;
+.btn-redes:hover {
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón Flotante de WhatsApp */
+/* ==========================================================================
+   7. PIE DE PÁGINA Y BOTÓN FLOTANTE
+   ========================================================================== */
+footer {
+    background-color: var(--azul-oscuro);
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #334155;
+}
+
+/* Botón flotante de WhatsApp */
 .whatsapp-flotante {
     position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--verde-whatsapp);
+    color: white;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: var(--verde-whatsapp);
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 200;
+    border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    font-size: 30px;
     text-decoration: none;
-    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .whatsapp-flotante:hover {
     transform: scale(1.1);
+    background-color: #20ba5a;
 }
 
-/* Pie de Página */
-footer {
-    background-color: var(--bg-principal);
-    text-align: center;
-    padding: 25px 0;
-    font-size: 14px;
-    color: var(--texto-gris);
-    border-top: 1px solid #1e293b;
-}
-
-/* Adaptabilidad para Celulares (Responsive) */
+/* ==========================================================================
+   8. MEDIA QUERIES (Ajustes para Celulares)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 32px; }
-    .hero p { font-size: 16px; }
-    nav { flex-direction: column; gap: 15px; }
-    .menu a { margin: 0 10px; }
-    .botones-contacto { flex-direction: column; align-items: center; }
-    .btn-redes { width: 100%; max-width: 280px; justify-content: center; }
-    .contenedor-video { padding-bottom: 56.25%; /* Ajuste fino para móviles */ }
-    .whatsapp-flotante { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 24px; }
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .menu a {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .titulo-seccion {
+        font-size: 2rem;
+    }
 }
